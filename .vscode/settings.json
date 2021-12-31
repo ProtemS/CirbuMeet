@@ -1,0 +1,13 @@
+{
+	"editor.tabSize": 2,
+	"editor.detectIndentation": false,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true,
+		"source.addMissingImports": true
+	},
+	"search.exclude": {
+		"yarn.lock": true
+	},
+	"editor.formatOnSave": true,
+	"css.validate": false,
+}
