@@ -18,11 +18,7 @@
 		"ecmaVersion": "latest",
 		"sourceType": "module"
 	},
-	"plugins": [
-		"react",
-		"react-hooks",
-		"unused-imports"
-	],
+	"plugins": ["react", "react-hooks", "unused-imports"],
 	"rules": {
 		"prettier/prettier": [
 			"warn",
@@ -34,21 +30,14 @@
 		"react/jsx-filename-extension": [
 			"warn",
 			{
-				"extensions": [
-					".js",
-					".jsx"
-				]
+				"extensions": [".js", ".jsx"]
 			}
 		],
 		"@next/next/no-img-element": "off",
 		"import/order": [
 			"error",
 			{
-				"groups": [
-					"builtin",
-					"external",
-					"internal"
-				],
+				"groups": ["builtin", "external", "internal"],
 				"pathGroups": [
 					{
 						"pattern": "react",
@@ -56,9 +45,7 @@
 						"position": "before"
 					}
 				],
-				"pathGroupsExcludedImportTypes": [
-					"react"
-				],
+				"pathGroupsExcludedImportTypes": ["react"],
 				"newlines-between": "always",
 				"alphabetize": {
 					"order": "asc",
@@ -84,6 +71,7 @@
 		],
 		"react/button-has-type": "off",
 		"react/prop-types": "off",
-		"no-unused-vars": "off"
+		"no-unused-vars": "off",
+		"jsx-a11y/anchor-is-valid": "off"
 	}
 }
