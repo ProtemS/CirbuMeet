@@ -1,7 +1,6 @@
 export const AppConfig = {
-	site_name: 'Starter',
-	title: 'Nextjs Starter',
-	description:
-		'Starter code for your Nextjs Boilerplate with Tailwind, ESLint, StyleLint and Prettier',
+	site_name: 'CirbuMeet',
+	title: 'CirbuMeet',
+	description: 'Start messaging with CirbuMeet the new unicorn 1M$ startup going to the moon 🚀',
 	locale: 'il',
 };

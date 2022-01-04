@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import Link from 'next/link';
+
 import CustomHeader from '../components/CustomHeader';
 
 const Home = () => {
@@ -12,11 +14,12 @@ const Home = () => {
 	const [password, setPassword] = useState('');
 	return (
 		<>
-			<CustomHeader title="CirbuMeet" />
+			<CustomHeader />
 
 			<main className="min-h-screen flex flex-col items-center justify-center bg-gray-200">
-				<div className="flex flex-row items-center">
-					<span className="text-3xl">CirbuMeet</span> <img src="/icons8-blankie-48.png" alt="" />{' '}
+				<div className="flex flex-row items-center select-none ">
+					<span className="text-3xl font-semibold">CirbuMeet</span>
+					<img src="/icons8-blankie-48.png" alt="" />
 				</div>
 				<div>CirbuMeet is a website dedicated to chatting with other people</div>
 				<div className="mt-6">Login:</div>
@@ -33,6 +36,7 @@ const Home = () => {
 							setUserName(e.target.value);
 						}}
 						placeholder="Username"
+						className="border-2 border-gray-700 outline-none"
 					/>
 					<input
 						type="password"
@@ -40,10 +44,14 @@ const Home = () => {
 							setPassword(e.target.value);
 						}}
 						placeholder="Password"
+						className="border-2 border-gray-700 outline-none"
 					/>
 
 					<button type="submit">Continue</button>
 				</form>
+				<Link href="/register">
+					<a>Dont have an account? Register!</a>
+				</Link>
 			</main>
 		</>
 	);
