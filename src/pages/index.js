@@ -16,7 +16,7 @@ const Home = () => {
 		<>
 			<CustomHeader />
 
-			<main className="min-h-screen flex flex-col items-center justify-center bg-gray-200">
+			<main className="min-h-screen flex flex-col items-center justify-center bg-indigo-50">
 				<div className="flex flex-row items-center select-none ">
 					<span className="text-3xl font-semibold">CirbuMeet</span>
 					<img src="/icons8-blankie-48.png" alt="" />
@@ -36,7 +36,7 @@ const Home = () => {
 							setUserName(e.target.value);
 						}}
 						placeholder="Username"
-						className="border-2 border-gray-700 outline-none"
+						className="border-2 border-gray-700 outline-none w-72"
 					/>
 					<input
 						type="password"
