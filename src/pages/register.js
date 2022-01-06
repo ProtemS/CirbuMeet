@@ -1,14 +1,21 @@
 import React, { useState } from 'react';
 
 import { Switch } from '@headlessui/react';
+import axios from 'axios';
+import Router from 'next/router';
 
 import CustomHeader from '../components/CustomHeader';
+import useLocalStorage from '../components/useLocalStorage';
 
 const Register = () => {
 	const [userName, setUserName] = useState('');
 	const [password, setPassword] = useState('');
 	const [nickName, setNickName] = useState('');
 	const [male, setMale] = useState(true);
+	// eslint-disable-next-line unused-imports/no-unused-vars
+	const [token, setToken] = useLocalStorage('token', '');
+	const [displayError, setDisplayError] = useState('');
+
 	const MaleOrFemale = () => {
 		if (male) return 'male';
 		return 'female';
@@ -26,7 +33,20 @@ const Register = () => {
 				<form
 					onSubmit={async (e) => {
 						e.preventDefault();
-						console.log(userName + password + nickName + MaleOrFemale());
+						try {
+							console.log(userName + password + nickName + MaleOrFemale());
+							const res = await axios.post('http://localhost:8000/users/register', {
+								username: userName,
+								password,
+								nickname: nickName,
+								gender: MaleOrFemale(),
+							});
+							setToken(res.data);
+							setDisplayError('Wonderful! Your account has been created!');
+							Router.push('/chatpage');
+						} catch (err) {
+							setDisplayError(err.response.data.msg);
+						}
 					}}
 					className="flex flex-col space-y-2"
 				>
@@ -44,7 +64,7 @@ const Register = () => {
 							setPassword(e.target.value);
 						}}
 						placeholder="Password"
-						className="border-2 border-gray-700 outline-none"
+						className="border-2 border-gray-700 outline-none w-72"
 					/>
 					<input
 						type="text"
@@ -52,7 +72,7 @@ const Register = () => {
 							setNickName(e.target.value);
 						}}
 						placeholder="Nickname (Chat name - optional)"
-						className="border-2 border-gray-700 outline-none"
+						className="border-2 border-gray-700 outline-none w-72"
 					/>
 					<div className="flex flex-row  justify-center">
 						<Switch.Group>
@@ -76,6 +96,7 @@ const Register = () => {
 						</Switch.Group>
 					</div>
 					<button type="submit">Continue</button>
+					<div>{displayError}</div>
 				</form>
 			</main>
 		</>
