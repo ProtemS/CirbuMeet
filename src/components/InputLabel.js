@@ -13,7 +13,7 @@ const InputLabel = ({
 }) => {
 	return (
 		<div {...props}>
-			<div className={`group bg-white p-4 shadow-lg${rounded && ' rounded-lg'}`}>
+			<div className={`group bg-white p-4 shadow-lg${rounded && ' rounded-2xl'}`}>
 				<label htmlFor={text}>
 					<div className="flex text-sm mb-1 font-medium text-gray-500 transition-colors group-focus-within:text-gray-900">
 						<div className="flex-1">{text}</div>

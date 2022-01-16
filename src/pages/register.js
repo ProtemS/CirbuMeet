@@ -26,7 +26,7 @@ const Chatpage = () => {
 		<>
 			<CustomHeader title="Register a Cirbumeet account" />
 
-			<main className="min-h-screen flex items-center justify-center bg-indigo-300">
+			<main className="min-h-screen flex items-center justify-center bg-radial-at-t from-sky-400 to-indigo-900">
 				<form
 					className="flex flex-col items-center m-4 w-full sm:flex-none sm:w-full sm:max-w-md min-w-max bg-white bg-opacity-80 backdrop-filter backdrop-blur-lg py-8 px-4 sm:px-8 rounded-lg shadow-lg border-2 border-white overflow-auto"
 					onSubmit={async (e) => {
@@ -96,7 +96,7 @@ const Chatpage = () => {
 						Register
 					</button>
 					<div
-						className={`flex justify-center items-center w-full mt-4 p-4 bg-red-200 border-2 border-red-600 text-red-900 rounded-lg transition-all ease-out duration-500 ${
+						className={`flex font-semibold justify-center items-center w-full mt-4 p-4 bg-red-200 border-2 border-red-600 text-red-900 rounded-lg transition-all ease-out duration-500 ${
 							!displayError ? 'h-0 p-0 border-0' : 'h-20'
 						}`}
 					>
